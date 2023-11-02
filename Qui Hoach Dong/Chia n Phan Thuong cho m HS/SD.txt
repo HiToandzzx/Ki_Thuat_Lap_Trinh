@@ -1,0 +1,35 @@
+Chia n phần thưởng cho m học sinh theo DTB giảm dần.
+Phần thưởng của HS có DTB cao hơn.
+Phần thưởng của HS có DTB thấp hơn.
+
+Dừng  Chia(0,m)=1 với mọi m
+      Chia(n,0)=0 với mọi n
+Qui ước  Chia(0,0)=1
+
+Đệ qui:
+
+	n<=m:	Chia(n,m) = Chia(n,n)
+	n>m:  Chia(n-m, m) HS cuối có phần thưởng
+		Chia(n, m-1) HS cuối không có phần thưởng
+
+	Chia(n,m)=Chia(n-m,m) + Chia(n,m-1)
+
+Qui hoạch động: Dùng mảng lưu trữ các cách chia
+	
+	Cơ sở: 
+		C[0][m]=1				for(int i=0 ; i<=Max ; i++)
+		C[n][0]=0		=>			C[0][i]=1				
+		C[n][0]=0					C[i][0]=0
+								C[0][0]=1
+		
+	Truy hồi:
+		c[i][j]=c[i][i]				Nếu i<=j
+		C[i][j]=C[i-j][j] + C[i][j-i] 	Nếu i>j
+
+		=> for(int i=1 ; i<=pt ; i++)
+			for(int j=1 ; j<=hs ; j++)
+				if(i<=j)
+					C[i][j] = c[i][i]
+				else 
+					c[i][j] = C[i-j][j] + C[i][j-i]
+		

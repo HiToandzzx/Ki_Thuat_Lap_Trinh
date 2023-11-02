@@ -1,0 +1,31 @@
+Trung tâm tính toán hiệu năng cao nhận được đơn đặt hàng của n khách hàng. 
+
+Khách hàng i muốn sử dụng máy trong khoảng thời gian từ ai đến bi và trả tiền thuê là ci
+
+Hãy bố trí lịch thuê máy để tổng số tiền thu được max, 
+mà thời gian sử dụng máy của 2 khách hàng bất kì được phục vụ đều không giao nhau. (Chỉ 1 máy)
+
+
+	_
+	  __
+	___
+	 _
+    __
+
+
+Khách hàng i = (ai, bi)	1 <= i <= n = ci
+
+=> Dùng mảng 1 chiều
+	L[i]: Số tiền lớn nhất nếu có cho khách hàng thứ i thuê
+- SX lịch làm việc theo thứ tự tăng dần thời điểm kết thúc các công việc
+	=> Công việc thứ j được tiến hành sau công việc thứ i
+	   Nếu thời điểm bắt đầu công việc thứ j > thời điểm kết thúc công việc thứ i.
+
+
+Cơ sở: 
+	L[i] = c[i], //c[i] = (b[i] - a[i]) * gia
+
+Truy hồi:
+	L[i] = max(L[j]) + c[i]
+		j < i
+		b[j] < a[i]

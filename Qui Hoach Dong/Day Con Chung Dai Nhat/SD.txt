@@ -1,0 +1,37 @@
+Tìm dãy con chung dài nhất của 2 dãy
+	a1, a2, ..., am
+	b1, b2, ..., bn
+
+
+a	1	2	3	4	5
+	7	3	8	6	2
+	_		_	_	_
+
+
+b	1	2	3	4	5	6	7	8
+	3	7	2	8	4	6	1	2
+		_		_		_		_
+
+Nhận xét:
+- Giả thiết liên quan đến bao nhiêu tham số?
+	=> Dùng mảng bấy nhiêu chiều
+- Giá trị mỗi phần tử của mảng = hàm mục tiêu
+
+Dùng mảng:
+L[i][j]
+	1 <= i <= m
+	i <= j <= n
+L[i][j] = Chiều dài dãy con chung dài nhất của 2 dãy đã cho 
+		a1, a2, ..., ai
+		b1, b2, ..., bj
+
+=> Nghiệm: L[m][n]
+
+Cơ sở:
+	L[0][m] = 0
+	L[n][0] = 0
+
+Truy hồi: L[i][j]=?
+	Nếu a[i] = b[j] 		Thì 		1 + L[i-1][j-1]		 	
+	Nếu a[i] # b[j] 		Thì 		max(L[i-1][j], L[i][j-1])
+	

@@ -1,0 +1,52 @@
+Cho n gói kẹo, gói thứ i có a[i] viên kẹo chia n gói kẹo thành 2 phần, sao cho tổng số kẹo 2 phần chênh lệch nhau ít nhất.
+(Không mở các gói kẹo)
+
+VD1:
+	a	1	2	3	4	5
+		10	8	5	5	2
+
+=>	10	5	//	8	5	2	(Chênh lệch: 0)
+
+
+VD2:
+	a	1	2	3	4	5
+		10	8	5	6	2
+=>	10	6	//	8	5	2	(Chênh lệch: 1)
+
+=>	S=31 => S/2=15.
+
+=>	a	1	2	3	4	5
+		10	8	6	5	2	
+
+	10+8=18 > 15 Chênh lệch 3
+	10+6=16 > 15 Chênh lệch 1
+	10+5=15 = 15 Chênh lệch 0 (Chọn)
+	10+2=12 < 15 Chênh lệch 3
+
+
+VD3:
+	a	1	2	3	4	5	6	7
+		15	10	8	6	3	3	1
+
+=> 	S=46 => S/2=23.
+Chia các gói kẹo thành 2 phần chênh lệch ít nhất => Tạo 1 phần chênh lệch 23 ít nhất.
+
+	15+10=25 > 23
+	15+8=23 = 23
+	15+6=21 < 23
+	15+3=18 < 23
+	15+1=16 < 23
+
+
+VD4:
+	a	1	2	3	4	5	6	7
+		15	7	7	6	4	3	1
+
+=> 	S=43 => S/2=21.
+Chia các gói kẹo thành 2 phần chênh lệch ít nhất => Tạo 1 phần chênh lệch 23 ít nhất.
+
+	15+7=22 > 21
+	15+6=21 = 21
+	15+4=19 < 21
+	15+3=18 < 21
+	15+1=16 < 21	

@@ -1,0 +1,14 @@
+BT 5d 
+//GIẢM SỐ VÒNG LẬP
+
+	for (x=1 ; x<=24 ; x++)
+		for (y=1 ; y<=35 ; y++)
+			if ((x+y=36) && (2*x+4*y=100))
+				printf("%d%d", x, y);
+
+=> Vì x+y=36 nên không cần vòng lập y
+
+	for (x=1 ; x<=24 ; x++)
+		y=36-x;
+		if ((y<=35) && (2*x+4*y=100))
+			printf("%d%d", x, y);

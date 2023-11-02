@@ -1,0 +1,22 @@
+Cho n gói kẹo, gói thứ i có a[i] viên kẹo chia n gói kẹo thành 2 phần, sao cho tổng số kẹo 2 phần chênh lệch nhau ít nhất.
+(Không mở các gói kẹo)
+
+VD1:
+	a	1	2	3	4	5
+		10	8	5	5	2
+
+=>	10	5	//	8	5	2	(Chênh lệch: 0)
+
+VD2:
+	a	1	2	3	4	5
+		10	8	5	6	2
+=>	10	6	//	8	5	2	(Chênh lệch: 1)
+
+
+Quy Hoạch Động:
+
+	P[i][j] = 1. Nếu có các gói kẹo lấy ra từ gói 1 => gói thứ i có tổng các cây kẹo là j.
+
+	P[n][S/2] == 1. Có 2 phần kẹo có số kẹo bằng nhau.
+	
+	P[n][S/2] != 1. Tìm 2 phần kẹo chệnh lệch nhau ít nhất.

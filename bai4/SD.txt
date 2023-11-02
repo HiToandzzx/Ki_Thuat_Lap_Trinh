@@ -1,0 +1,21 @@
+//Hoán đổi giá trị 2 biến. Không dùng biến trung gian.
+
+//Cách 1: Không dùng biến trung gian
+a=5, b=7
+
+a=a+b		a=12, b=7
+b=a-b		a=12, b=5
+a=a-b		a=7 , b=5
+
+=> 	phép +, - có thể vượt khỏi phạm vi giá trị cho phép của a, b.
+	và chỉ sử dụng cho kiểu số.
+
+//Cách 2: Phép toán XOR
+a='u', b='v'
+
+a=a xor b;
+b=a xor b;
+a=a xor b;
+
+Vẫn hoán đổi được giá trị 2 biến không phải kiểu số không dùng biến trung gian
+	

@@ -1,0 +1,19 @@
+  0 1 2 3 4 5 6 7
+0 l a p t r i n h
+1 a p t r i n h
+2 p t r i n h
+3 t r i n h
+4 r i n h
+5 i n h
+6 n h
+7 h
+
+dòng o: cột chạy từ 0 đến l-1 = 7
+dòng 1: cột chạy từ 0 đến l-2 = 6
+dòng 2: cột chạy từ 0 đến l-3 = 5
+.
+.
+.
+dòng i: cột chạy từ 0 đến l-i-1 = k
+
+* k[i][j] = a[i+j]

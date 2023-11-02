@@ -1,0 +1,22 @@
+Chia n phần thưởng cho m học sinh theo DTB giảm dần.
+Phần thưởng của HS có DTB cao hơn.
+Phần thưởng của HS có DTB thấp hơn.
+
+Chia(n, m)
+
+Chia(0, m) = 1	Nếu không có phần thưởng nào và chia cho m HS.	
+Chia(n, 0) = 0	Nếu không có n phần thưởng và không chia cho HS nào.
+Chia(0, 0) = 1	Nếu không có phần thưởng và không có HS.
+
+1. n = m: Chia(n, m) = Chia(n, n)	
+
+2. n < m: Chia(n, m) = Chia(n, n)
+
+3. n > m: 
+   TH1: HS m(cuối cùng) có tham gia nhận thưởng.
+	  Chia(n,m) = Chia(n-m, m).
+
+   TH2: HS m(cuối cùng) không tham gia nhận thưởng.
+	  Chia(n,m) = Chia(n, m-1).
+
+=> Chia(n, m) = Chia(n-m, m) + Chia(n, m-1).

@@ -1,0 +1,34 @@
+Cho dãy a1,a2,...,an. Tìm dãy con đơn điệu tăng dần dài nhất.
+
+VD:
+a	1	2	3	4	5	6	7	8	9	10
+	5	2	3	4	9	10	5	6	7	8
+		_____________			____________________
+
+=> 
+a	0	1	2	3	4	5	6	7	8	9	10
+     min	5	2	3	4	9	10	5	6	7	8
+			_____________			____________________
+
+Tìm dãy con đơn điệu dài nhất.
+L[0,n]: Lưu trữ độ dài các dãy con đơn điệu.
+L[i]: Chiều dài dãy con đơn điệu dài nhất từ phần tử có chữ số 0 đến phần từ có chữ số i.
+
+Cơ sở:	L[0]=1
+
+Truy hồi:   Xét phần tử thứ i (1 <= i <= n)
+		L[i] = max(L[j]) + 1
+			a[j] < a[i]
+			0 <= j < ipp
+		=> Chiều dài dãy con đơn điệu dài nhất là: L[n] - 1 
+
+Để in ra các phần tử của dãy con:
+	Dùng 1 mảng quản lí chỉ số các phần tử của dãy con đơn điệu
+		T[i]: Là chỉ số phần tử đứng trước phần tử thứ i
+		=>	T[2] = 0
+			T[3] = 2
+			T[4] = 3
+			T[7] = 4
+			T[8] = 7
+			T[9] = 8
+			T[10] = 9
